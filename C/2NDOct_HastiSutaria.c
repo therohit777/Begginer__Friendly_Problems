@@ -1,70 +1,37 @@
-/*Knapsack problem using greedy algorithm*/
-# include<stdio.h>
+#include<stdio.h>
 
-void knapsack(int n, float weight[], float profit[], float capacity) 
+/* Function to find maximum of two integers */
+int max(int a, int b) { return (a > b)? a : b; }
+
+/* Function to find the maximum value that can be put in a knapsack of capacity W */
+int knapSack(int W, int weight[], int value[], int n)
 {
-    float x[20], tp = 0;
-    int i, j, u;
-    u = capacity;
-    
-    for (i = 0; i < n; i++)
-        x[i] = 0.0;
-    for (i = 0; i < n; i++) {
-        if (weight[i] > u)
-            break;
-        else {
-            x[i] = 1.0;
-    tp = tp + profit[i];
-    u = u - weight[i];
-    }
-}
-    if (i < n)
-        x[i] = u / weight[i];
-        tp = tp + (x[i] * profit[i]);
-        printf("\nThe result is:- ");
-    for (i = 0; i < n; i++)
-        printf("%f\t", x[i]);
-    printf("\nMaximum profit:- %f", tp);
-}
-int main() {
+if (n == 0 || W == 0) /* Base Case */
+return 0;
 
-    int num, i, j;
+/* If weight of the nth item is more than Knapsack capacity W */
+if (weight[n-1] > W)
+return knapSack(W, weight, value, n-1); /* this item cannot be included in the optimal solution */
 
-    printf("\nEnter the number of objects:- ");
-    scanf("%d", &num);
-    
-    float weight[num], profit[num], capacity;
-    float ratio[num], temp;
-    
-    printf("\nEnter the weights and profits of each object:- ");
-    for (i = 0; i < num; i++) {
-        
-        scanf("%f %f", &weight[i], &profit[i]);
-    }
-    printf("\nEnter the capacity of knapsack:- ");
-    scanf("%f", &capacity);
-    
-    for (i = 0; i < num; i++) {
-        ratio[i] = profit[i] / weight[i];
-    }
-    for (i = 0; i < num; i++) {
-        for (j = i + 1; j < num; j++) {
-            if (ratio[i] < ratio[j]) {
-                
-                temp = ratio[j];
-                ratio[j] = ratio[i];
-                ratio[i] = temp;
-                
-                temp = weight[j];
-                weight[j] = weight[i];
-                weight[i] = temp;
-                
-                temp = profit[j];
-                profit[j] = profit[i];
-                profit[i] = temp;
-            }
-        }
-    }
-knapsack(num, weight, profit, capacity);
-return(0);
+else return max( value[n-1] + knapSack(W-weight[n-1], weight, value, n-1), knapSack(W, weight, value, n-1));
+}
+
+int main()
+{
+int n;
+printf("\nEnter the number of items :" );
+scanf("%d", &n);
+int value[n];
+int weight[n];
+int i;
+printf("\nEnter the item’s weight and its value \n");
+for(i = 0; i < n; i++)
+{
+scanf("%d %d", &weight[i], &value[i]);
+}
+int W;
+printf("\nEnter the capacity of the knapsack : ");
+scanf("%d", &W);
+printf("\nMaximum value in a 0-1 knapsack : %d\n", knapSack(W, weight, value, n));
+return 0;
 }
