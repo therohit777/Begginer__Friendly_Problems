@@ -1,4 +1,4 @@
-/*Knapscak problem using greedy algorithm*/
+/*Knapsack problem using greedy algorithm*/
 # include<stdio.h>
 
 void knapsack(int n, float weight[], float profit[], float capacity) 
