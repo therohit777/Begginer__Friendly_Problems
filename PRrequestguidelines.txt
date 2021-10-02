@@ -1,0 +1,13 @@
+PR Request GUIDELINES:
+
+
+ 1. Guys Follow the format to make files before making the PR Request.
+             Format:
+                    2NDOct_Githubname.py
+
+
+ 2. For making PR request for web dev projects:
+        Make a folder :2NDOct_Githubname
+        and store all your project files in it.
+
+             
