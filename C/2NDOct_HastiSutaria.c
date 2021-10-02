@@ -1,3 +1,4 @@
+/*Knapsack using dynamic programming*/
 #include<stdio.h>
 
 /* Function to find maximum of two integers */
