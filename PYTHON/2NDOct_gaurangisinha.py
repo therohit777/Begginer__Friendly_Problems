@@ -1,4 +1,4 @@
-# Python program for counting sort
+# Python program for Counting Sort
   
 def counting_sort(arr): 
     max_element = int(max(arr)) 
@@ -29,3 +29,5 @@ print("Enter the elements of the array : ")
 arr = list(map(int, input().split()))
 ans = counting_sort(arr) 
 print("Sorted array is : " + str(ans)) 
+
+
