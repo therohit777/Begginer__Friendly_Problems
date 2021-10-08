@@ -12,5 +12,5 @@ int main()
 		rev=rev*10+rem;
 		n=n/10;
 	}
-	cout<<"Reversed Number :"<<rev<<endl;
+	cout<<"Reversed Number is:"<<rev<<endl;
 }
