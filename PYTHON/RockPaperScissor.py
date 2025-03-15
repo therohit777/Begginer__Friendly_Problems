@@ -20,19 +20,17 @@ print ("Please choose a letter:")
 
 print ("[R]ock, [S]cissors or [P]aper.")
 
-continue
-
 # Echo the user's choice
 
 print ("You chose: " + userChoice)
 
 choices = ['R', 'P', 'S']
 
-opponenetChoice = random.choice(choices)
+opponenetChoice = random.choice(choice)
 
 print ("I chose: " + opponenetChoice)
 
-if opponenetChoice == str.upper(userChoice):
+if opponenetChoice == str.upper(userChoice) and str.upper(userChoice) == "P"
 
 print ("Tie! ")
 
@@ -40,21 +38,15 @@ print ("Tie! ")
 
 elif opponenetChoice == 'R' and userChoice.upper() == 'S':
 
-print ("Scissors beats rock, I win! ")
-
-continue
+print ("Rock beat scissors, I win! ")
 
 elif opponenetChoice == 'S' and userChoice.upper() == 'P':
 
-print ("Scissors beats paper! I win! ")
-
-continue
+print ("scissors beat paper, I win! ")
 
 elif opponenetChoice == 'P' and userChoice.upper() == 'R':
 
 print ("Paper beat rock, I win!")
-
-continue
 
 else:
 
